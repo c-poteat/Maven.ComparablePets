@@ -1,8 +1,11 @@
 package io.zipcoder;
 
 public class Dog extends Pet {
-    public Dog(String name) {
+    String[] dogPromptString;
+
+    public Dog(String name, String[] dogPromptString) {
         super(name);
+        this.dogPromptString = dogPromptString;
     }
 
     public Dog() {

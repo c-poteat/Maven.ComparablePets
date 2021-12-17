@@ -1,20 +1,15 @@
 package io.zipcoder;
 
-import java.util.HashMap;
+import java.util.Scanner;
 
 public class PetConsole {
+    public static final String ANSI_PURPLE = "\u001B[35m";
     private final IOConsole console = new IOConsole(AnsiColor.PURPLE);
-    private HashMap<String, String> petMap = new HashMap<String, String>();
-    private Cat cat = new Cat();
-    private Dog dog = new Dog();
-    private Mouse mouse = new Mouse();
-    private String howManyPets;
-    private String petInput1;
-    private String petInput2;
-    private String petInput3;
-    private String petName1;
-    private String petName2;
-    private String petName3;
+    private static final Pet pet = new Pet();
+    private static final Cat cat = new Cat();
+    private static final Dog dog = new Dog();
+    private static final Mouse mouse = new Mouse();
+    Scanner prompt = new Scanner(System.in);
 
     public PetConsole() {
     }
@@ -27,88 +22,34 @@ public class PetConsole {
     }
 
     public void askForNumberOfPets() {
-        howManyPets = console.getStringInput("Please tell us how many pets you have from 1 - 3");
-        if (howManyPets.equals("1")) {
-            nameAndType1();
-        } else if (howManyPets.equals("2")) {
-            nameAndType2();
-        } else if (howManyPets.equals("3")) {
-            nameAndType3();
-        }
+        System.out.println(ANSI_PURPLE + "Please enter the number of pets you have? ");
+        //takes an integer input  // Example 5
+        pet.petPromptString = new String[prompt.nextInt()];
+        //consuming the <enter> from input above
+        prompt.nextLine();
+        askForTypesOfPets();
     }
-
-    public void nameAndType1() {
-            petInput1 = console.getStringInput("Please enter whether you have a Cat | Dog | Mouse");
-            petName1 = console.getStringInput("Please tell us the name of your " + petInput1);
-            if (petInput1.equals("Cat")) {
-                cat.setName(petName1);
-            }
-
-            if (petInput1.equals("Dog")) {
-                dog.setName(petName1);
-            }
-            if (petInput1.equals("Mouse")) {
-                dog.setName(petName1);
-            }
-            countThePets();
+        public void askForTypesOfPets() {
+        System.out.println("What are the type of pets you have? Please select out of Dog | Cat | Mouse");  // The names of the pets equal integer input
+        for (int i = 0; i < pet.petPromptString.length; i++) {
+            pet.petPromptString[i] = prompt.nextLine();  // Stores the pet type in the original array
         }
-
-
-    public void nameAndType2() {
-        petInput1 = console.getStringInput("Please enter whether you have a Cat | Dog | Mouse");
-        petInput2 = console.getStringInput("Enter the second type");
-        petName1 = console.getStringInput("Please tell us the name of your " + petInput1);
-        petName2 = console.getStringInput("Please tell us the name of your " + petInput2);
-        if (petInput1.equals("Cat")) {
-            cat.setName(petName1);
-            if (petInput1.equals("Dog")) {
-                dog.setName(petName2);
-                if (petInput2.equals("Mouse")) {
-                    mouse.setName(petName2);
-                }
-                countThePets();
+        System.out.println("\nYou have entered: ");
+        //for-each loop to print the string
+        for (String string : pet.petPromptString) {
+            System.out.println(string);
             }
         }
-    }
+
+        public void namesAndTypes() {
+            System.out.println("Tell us the names of your pets?");
+            prompt.nextLine();
+            System.out.println(pet.petPromptString);
+            }
+
+        }
 
 
-    public void nameAndType3() {
-        petInput1 = console.getStringInput("Please enter whether you have a Cat | Dog | Mouse");
-        petInput2 = console.getStringInput("Enter the second type");
-        petInput3 = console.getStringInput("Enter the third type");
-        petName1 = console.getStringInput("Please tell us the name of your " + petInput1);
-        petName2 = console.getStringInput("Please tell us the name of your " + petInput2);
-        petName3 = console.getStringInput("Please tell us the name of your " + petInput3);
-        if (petInput1.equals("Cat")) {
-            cat.setName(petName1);
-        }
-        if (petInput2.equals("Dog")) {
-            dog.setName(petName2);
-        }
-        if (petInput3.equals("Mouse")) {
-            mouse.setName(petName3);
-        }
-        countThePets();
-    }
-
-    public void countThePets() {
-        if (howManyPets.equals("1")) {
-            petMap.put("1", petInput1);
-        } else if (howManyPets.equals("2")) {
-            petMap.put("1", petInput1);
-            petMap.put("2", petInput2);
-        } else if (howManyPets.equals("3")) {
-            petMap.put("1", petInput1);
-            petMap.put("2", petInput2);
-            petMap.put("3", petInput3);
-        }
-    }
-
-    public void printScreen() {
-        System.out.println("The name of your pets are" + " " + mouse.getName() + " " + dog.getName() + " " + cat.getName() +
-                "." + " You have a total of 3 " + "pets " + petMap);
-    }
-}
 
 
 

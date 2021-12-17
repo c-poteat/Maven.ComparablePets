@@ -5,7 +5,7 @@ public class Main {
         PetConsole petConsole = new PetConsole();
         petConsole.getPetInput();
         petConsole.askForNumberOfPets();
-        petConsole.printScreen();
+//        petConsole.printScreen();
 
     }
 }
