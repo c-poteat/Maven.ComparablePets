@@ -7,6 +7,7 @@ public class Mouse extends Pet {
     }
 
     public Mouse() {
+        super();
     }
 
     @Override

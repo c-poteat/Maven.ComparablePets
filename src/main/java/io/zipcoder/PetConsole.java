@@ -38,18 +38,39 @@ public class PetConsole {
     }
 
     public void nameAndType1() {
-        petInput1 = console.getStringInput("Please enter whether you have a Cat | Dog | Mouse");
-        petName1 = console.getStringInput("Please tell us the name of your " + petInput1);
-        countThePets();
-    }
+            petInput1 = console.getStringInput("Please enter whether you have a Cat | Dog | Mouse");
+            petName1 = console.getStringInput("Please tell us the name of your " + petInput1);
+            if (petInput1.equals("Cat")) {
+                cat.setName(petName1);
+            }
+
+            if (petInput1.equals("Dog")) {
+                dog.setName(petName1);
+            }
+            if (petInput1.equals("Mouse")) {
+                dog.setName(petName1);
+            }
+            countThePets();
+        }
+
 
     public void nameAndType2() {
         petInput1 = console.getStringInput("Please enter whether you have a Cat | Dog | Mouse");
         petInput2 = console.getStringInput("Enter the second type");
         petName1 = console.getStringInput("Please tell us the name of your " + petInput1);
         petName2 = console.getStringInput("Please tell us the name of your " + petInput2);
-        countThePets();
+        if (petInput1.equals("Cat")) {
+            cat.setName(petName1);
+            if (petInput1.equals("Dog")) {
+                dog.setName(petName2);
+                if (petInput2.equals("Mouse")) {
+                    mouse.setName(petName2);
+                }
+                countThePets();
+            }
+        }
     }
+
 
     public void nameAndType3() {
         petInput1 = console.getStringInput("Please enter whether you have a Cat | Dog | Mouse");
@@ -58,6 +79,15 @@ public class PetConsole {
         petName1 = console.getStringInput("Please tell us the name of your " + petInput1);
         petName2 = console.getStringInput("Please tell us the name of your " + petInput2);
         petName3 = console.getStringInput("Please tell us the name of your " + petInput3);
+        if (petInput1.equals("Cat")) {
+            cat.setName(petName1);
+        }
+        if (petInput2.equals("Dog")) {
+            dog.setName(petName2);
+        }
+        if (petInput3.equals("Mouse")) {
+            mouse.setName(petName3);
+        }
         countThePets();
     }
 
@@ -75,7 +105,7 @@ public class PetConsole {
     }
 
     public void printScreen() {
-        System.out.println("The name of your pets are" + " " + petName1 + " " + petName2 + " " + petName3 +
+        System.out.println("The name of your pets are" + " " + mouse.getName() + " " + dog.getName() + " " + cat.getName() +
                 "." + " You have a total of 3 " + "pets " + petMap);
     }
 }
