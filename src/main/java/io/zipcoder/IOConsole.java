@@ -11,7 +11,7 @@ import java.util.Scanner;
         private final AnsiColor ansiColor;
 
         public IOConsole() {
-            this(AnsiColor.AUTO);
+            this(AnsiColor.PURPLE);
         }
 
         public IOConsole(AnsiColor ansiColor) {

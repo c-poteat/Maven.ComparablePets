@@ -1,13 +1,9 @@
 package io.zipcoder;
 
-import java.util.ArrayList;
-
 public class Cat extends Pet {
-    ArrayList<String> catPromptString;
 
-    public Cat(String name, ArrayList<String> catPromptString) {
+    public Cat(String name) {
         super(name);
-        this.catPromptString = catPromptString;
 
     }
 

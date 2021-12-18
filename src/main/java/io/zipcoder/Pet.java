@@ -1,15 +1,15 @@
 package io.zipcoder;
 
-public class Pet {
+public class Pet implements Comparable{
     private String name;
-    String[] petPromptString;
+    String[] typeOfPetArray;
+    String[] namesOfPets;
 
     public Pet() {
     }
 
     public Pet(String name) {
     }
-
 
     public String getName() {
         return name;
@@ -19,11 +19,18 @@ public class Pet {
         this.name = name;
     }
 
-    public Pet(String name, String[] petPromptString) {
+    public Pet(String name, String[] typeOfPetArray, String[] namesOfPets) {
         this.name = name;
-        this.petPromptString = petPromptString;
+        this.typeOfPetArray = typeOfPetArray;
+        this.namesOfPets = namesOfPets;
     }
+
     public String speak() {
         return "speak";
+    }
+
+    @Override
+    public int compareTo(Object o) {
+        return 0;
     }
 }
