@@ -15,7 +15,7 @@ public class DogTest {
     public void dogSetName() {
         // Given
         Dog dog = new Dog();
-        String expected = "Spike";
+        String expected = "Tom";
 
         //When
         dog.setName(expected);

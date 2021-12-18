@@ -3,8 +3,6 @@ package io.zipcoder;
 import org.junit.Assert;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
-
 public class MouseTest {
 
     @Test
@@ -12,6 +10,7 @@ public class MouseTest {
         Mouse mouse = new Mouse();
         Assert.assertTrue(mouse instanceof Pet);
     }
+
     @Test
     public void mouseSetName() {
         // Given
@@ -23,7 +22,7 @@ public class MouseTest {
         String actual = mouse.getName();
 
         //Then
-        Assert.assertEquals(expected,actual);
+        Assert.assertEquals(expected, actual);
     }
 
     @Test
@@ -33,6 +32,6 @@ public class MouseTest {
         String actual = "Squeak";
 
         //Then
-        Assert.assertEquals(actual,mouse.speak());
+        Assert.assertEquals(actual, mouse.speak());
     }
 }

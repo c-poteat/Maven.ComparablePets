@@ -7,6 +7,5 @@ public class Main {
         petConsole.askForNumberOfPets();
         petConsole.askForTypesOfPets();
         petConsole.askForNames();
-
     }
 }

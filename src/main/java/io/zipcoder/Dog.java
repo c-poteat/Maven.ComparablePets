@@ -4,7 +4,6 @@ public class Dog extends Pet {
 
     public Dog(String name) {
         super(name);
-
     }
 
     public Dog() {
@@ -15,5 +14,4 @@ public class Dog extends Pet {
     public String speak() {
         return "woof";
     }
-
 }

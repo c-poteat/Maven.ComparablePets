@@ -4,7 +4,6 @@ public class Mouse extends Pet {
 
     public Mouse(String name) {
         super(name);
-
     }
 
     public Mouse() {
@@ -15,5 +14,4 @@ public class Mouse extends Pet {
     public String speak() {
         return "Squeak";
     }
-
 }

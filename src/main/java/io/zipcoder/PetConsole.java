@@ -1,6 +1,5 @@
 package io.zipcoder;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class PetConsole {
@@ -37,12 +36,6 @@ public class PetConsole {
             System.out.println(string);
         }
     }
-
-        public static void petSortComparableMethod() {
-            Arrays.sort(pet.namesOfPets);
-            Arrays.sort(pet.typeOfPetArray);
-        }
-
 
     public void askForNames() {
         System.out.println("\nWhat are the names of your Pets?");  // The names of the pets equal integer input
